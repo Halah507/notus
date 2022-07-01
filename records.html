@@ -1,0 +1,153 @@
+<!DOCTYPE html>  
+<html lang="en">  
+ <head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+   <title>Start a Studying session</title>  
+  <style>
+   
+ *{
+padding: 0;
+margin: 0;
+list-style: none;
+
+}
+ 
+ nav{
+background-image: linear-gradient(to bottom right,rgb(0, 94, 128),lightblue);
+width: 100%;
+overflow: hidden;
+position: fixed;
+bottom: 0;
+
+
+}
+
+/*
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}*/
+
+nav{
+  background-image: linear-gradient(to bottom right,rgb(51, 134, 164),lightblue);
+  width: 60%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  
+  text-align: center;
+  margin-left:230px ;
+  margin-right:60px ;
+  border-radius: 10px;
+  
+  }
+  
+  
+  nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+button {
+  transition-duration: 0.4s;
+  background-color: white;
+  border-radius: 50%;
+  padding: 15px;
+  border: 2px solid teal;
+  font-size: 20px;
+  cursor:pointer;
+}
+
+button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+.file{
+background-image: url('zigzag.jpg');
+padding: 40px 20px 40px 20px;
+text-decoration: none;
+margin: 0 400px 50px 400px;
+border-radius: 20px;
+}
+
+.file[button]{
+padding: 12px;
+background-color: white;
+
+}
+
+#records {
+text-align: center;
+justify-content: center;
+margin-top: 150px;
+
+}
+
+body{
+background-image: url('unique.jpg');
+
+
+}
+  </style>
+ </head>  
+ <body> 
+  <nav>
+    <ul>
+      <li><a href="notus.html">Main</a></li><!--add welcom+cool space animation?motive?-->
+      <li><a href="notes.html">My Notes</a></li><!--add internal link to note taker-->
+      <li><a href="lectures.html">Lectures</a></li>
+      <li><a href="study.html">Start studying</a></li><!--pomodoro,studying sound,add questions-->
+      <li><a href="records.html">Recorded Lectures</a></li>
+     
+      <li><a href="questions.html">My Questions</a></li>
+    </ul>
+  </nav>
+  <div id="wrapper">
+  
+  <div id="records">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="file"><input type="file" id="upload"/></div><br>
+  <audio id="audio" controls>
+    <source src="" id="src" />
+  </audio></div>
+  </div>
+  <script>
+    function handleFiles(event) {
+    var files = event.target.files;
+    $("#src").attr("src", URL.createObjectURL(files[0]));
+    document.getElementById("audio").load();
+}
+
+document.getElementById("upload").addEventListener("change", handleFiles, false);
+  </script>  
+ </body>  
+</html>  
+
+<!--customize it to make it as a sound player-->

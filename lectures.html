@@ -1,0 +1,193 @@
+<!DOCTYPE html>  
+<html lang="en">  
+ <head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+   <title>My lectures</title>  
+  <style>
+   
+ *{
+padding: 0;
+margin: 0;
+list-style: none;
+
+}
+
+ nav{
+background-image: linear-gradient(to bottom right,rgb(0, 94, 128),lightblue);
+width: 100%;
+overflow: hidden;
+position: fixed;
+bottom: 0;
+
+
+}
+
+/*
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}*/
+
+
+nav{
+  background-image: linear-gradient(to bottom right,rgb(51, 134, 164),lightblue);
+  width: 60%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  
+  text-align: center;
+  margin-left:230px ;
+  margin-right:60px ;
+  border-radius: 10px;
+  
+  }
+  
+  
+  nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+button {
+  background-color: white;
+  border-radius: 2px;
+  padding: 5px 16px 5px 16px;
+  border: 2px solid black;
+  font-size: 15px;
+  cursor:pointer;
+  margin-left: 2px;
+  margin-bottom: 5px;
+}
+
+
+span{
+  display: flex;
+padding: 200px;
+
+margin-left: 80px;
+margin-right: 80px;
+
+}
+
+#wrapper{
+ display: flex;
+ justify-content: center;
+ text-align: center;
+background-image: url('blues.jpg');
+padding: 60px;
+
+
+}
+
+#list{
+padding: 90px 90px 160px 90px;
+
+margin: 10px 160px 10px 160px;
+border: 2px solid black;
+}
+
+input{
+width: 40%;
+height: 30px;
+}
+
+label{
+font-size: 20px;
+font-weight: bold;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin-top: 6px;
+margin-right: 5px;
+}
+
+p{
+font-size:23px;
+font-weight: 100;
+
+
+
+}
+  </style>
+ </head>  
+ <body> 
+  <nav>
+    <ul>
+<li><a href="notus.html">Main</a></li><!--add welcom+cool space animation?motive?-->
+<li><a href="notes.html">My Notes</a></li><!--add internal link to note taker-->
+<li><a href="lectures.html">Lectures</a></li>
+<li><a href="study.html">Start studying</a></li><!--pomodoro,studying sound,add questions-->
+<li><a href="records.html">Recorded Lectures</a></li>
+
+<li><a href="questions.html">My Questions</a></li>
+    </ul>
+  </nav>
+  <div id="wrapper">
+  <label>Add The Lecture Name Here:</label>
+  <input type="text" id="new-lecture">
+<button id="add">Add</button>
+<div id="lectures"></div>
+    </div>
+<div id="list" >
+
+</div>
+
+  <script>
+
+let btn = document.getElementById('add');
+let input = document.getElementById('new-lecture');
+let list= document.getElementById('list');
+
+
+
+btn.addEventListener('click',function(){
+let paragraph= document.createElement('p');
+paragraph.innerText=input.value;
+list.appendChild(paragraph);
+input.value= '';
+
+
+paragraph.addEventListener('click', ()=>{
+paragraph.style.textDecoration='line-through';
+
+
+})
+});
+
+
+
+
+
+
+
+
+  </script>  
+ </body>  
+</html>  
+
+
+<!--1)create lectures names/list from the input 2)each added lecture should have a checkbox for completion next to it 3)these item will be added to span section of the page 4)clearing button to clear all lectures 5)dont forget to style them nicely-->

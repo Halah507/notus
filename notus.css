@@ -1,0 +1,76 @@
+
+/*  */
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+
+}
+
+
+body{
+background-color: #4e54c8;;
+margin-bottom: 0;
+animation-name: colors;
+animation-duration: 15s;
+animation-timing-function:ease-in ;
+animation-iteration-count: infinite;
+animation-direction:alternate ;
+
+}
+
+@keyframes colors {
+  0%{background-color:#4e54c8; }
+  25%{background-color: blueviolet; }
+  50%{ background-color: orchid;}
+  75%{ background-color:darkorchid ;}
+  100%{ background-color:cornflowerblue ;}
+}
+
+.context h1{
+text-align: center;
+justify-content: center;
+font-size: 60px;
+font-family: fantasy;
+margin-top: 200px;
+color: white;
+
+
+}
+
+h2{
+color: white;
+
+}
+nav{
+  background-image: linear-gradient(to bottom right,rgb(51, 134, 164),lightblue);
+  width: 60%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  
+  text-align: center;
+  margin-left:230px ;
+  margin-right:60px ;
+  border-radius: 10px;
+  
+  }
+  
+  
+  nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}

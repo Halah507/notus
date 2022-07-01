@@ -1,0 +1,245 @@
+<!DOCTYPE html>  
+<html lang="en">  
+ <head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+   <title>Start a Studying session</title>  
+  
+  <style>
+   
+ *{
+padding: 0;
+margin: 0;
+list-style: none;
+
+}
+ 
+body{
+background-image:url('study1.webp')
+
+}
+
+/*
+ nav{
+background-image: linear-gradient(to bottom right,rgb(0, 94, 128),lightblue);
+width: 100%;
+overflow: hidden;
+position: fixed;
+bottom: 0;
+
+
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+*/
+
+nav{
+  background-image: linear-gradient(to bottom right,rgb(51, 134, 164),lightblue);
+  width: 60%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  
+  text-align: center;
+  margin-left:230px ;
+  margin-right:60px ;
+  border-radius: 10px;
+  
+  }
+  
+  
+  nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+textarea{
+padding: 10px 50px 50px 50px;
+}
+
+
+
+#wrapper{
+
+text-align: center;
+
+justify-content: center;
+
+margin-top: 50px;
+
+
+
+
+}
+
+#timer{
+background-color: pink;
+margin-top: 70px;
+padding:80px 10px 80px 10px;
+border-radius: 100%;
+margin: 70px 500px 50px 500px;
+border:5px dotted deeppink;
+}
+
+button{
+  background-color: white;
+  color: black;
+  border: 2px solid deeppink;
+cursor: pointer;
+font-size: 12px;
+padding: 13px 3px 13px 3px;
+
+}
+
+
+
+
+.objectives{
+background-color: white;
+padding: 40px 40px 40px 40px;
+margin-left: 40px;
+margin-right: 40px;
+margin:50px 290px 50px 290px ;
+}
+  </style>
+ </head>  
+ <body> 
+  <nav>
+    <ul>
+<li><a href="notus.html">Main</a></li><!--add welcom+cool space animation?motive?-->
+<li><a href="notes.html">My Notes</a></li><!--add internal link to note taker-->
+<li><a href="lectures.html">Lectures</a></li>
+<li><a href="study.html">Start studying</a></li><!--pomodoro,studying sound,add questions-->
+<li><a href="records.html">Recorded Lectures</a></li>
+
+<li><a href="questions.html">My Questions</a></li>
+    </ul>
+  </nav>
+  <div id="wrapper">
+  <div class="objectives">
+    <h3>Plan for this studying session and write your studying goals here:</h3>  </br>
+    <textarea id="write" placeholder="Write your goals for this studying session,e.g.1-finish one chapter 2-rememorize newton laws"></textarea>
+  </div>
+
+  <div id="timer">
+<h3>Your Studying Timer:</h3></br>
+<p><span id="hrs">00:</span><span id="mins">00:</span><span id="secs">00</span></p></br>
+<button id="start-btn">Start</button>
+<button id="pause-btn">Pause</button>
+<button id="Reset-btn">Reset</button>
+  </div>
+
+  </div>
+
+  <script>
+    let hrs = document.getElementById('hrs');
+    let mins = document.getElementById('mins');
+    let secs = document.getElementById('secs');
+
+let startBtn= document.getElementById('start-btn');
+let pauseBtn= document.getElementById('pause-btn');
+let resetBtn= document.getElementById('reset-btn');
+
+let hours=00;
+let minutes =00;
+let seconds=00;
+let interval;
+
+function startTimer(){
+ seconds++;
+
+ if(seconds==60){
+seconds=0;
+minutes++;
+ }
+ if(minutes==60){
+minutes=0;
+hours++;
+
+ }
+ 
+
+  
+
+secs.innerHTML=pad(seconds);
+mins.innerHTML=pad(minutes)+`:`;
+hrs.innerHTML=pad(hours)+`:`;
+
+}
+
+startBtn.addEventListener('click', ()=>{
+clearInterval(interval);
+interval = setInterval(startTimer,1000)
+
+});
+
+pauseBtn.addEventListener('click', ()=>{
+  clearInterval(interval);
+ 
+})
+
+resetBtn.addEventListener('click', ()=> {
+  
+  clearInterval(interval);
+
+  let hours='0';
+let minutes ='0';
+let seconds='0';
+
+secs.innerHTML=pad(seconds);
+mins.innerHTML=pad(minutes)+`:`;
+hrs.innerHTML=pad(hours)+`:`;
+ 
+ 
+
+})
+
+
+function pad(unit){
+  return (('0')+unit).length >2 ?unit :'0'+unit
+}
+
+
+
+
+
+
+//define var,increment numbers contin ,divide secs mins and hrs,show it in html,define all btns in js
+
+  </script>  
+ </body>  
+</html>  
+
+<!--1)timer
+  2)objectives of this session 
+  
+  
+-->
